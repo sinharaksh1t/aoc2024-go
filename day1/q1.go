@@ -1,12 +1,11 @@
 package day1
 
 import (
-	"fmt"
 	"math"
 	"sort"
 )
 
-func q1(col1, col2 []int) {
+func q1(col1, col2 []int) int {
 	// Sort the two columns
 	// I know O(n log(n)), eww
 	sort.Ints(col1)
@@ -20,5 +19,5 @@ func q1(col1, col2 []int) {
 		result += int(math.Abs(float64(val1 - val2)))
 	}
 
-	fmt.Printf("Result for Day-1 Q1: %d\n", result)
+	return result
 }
