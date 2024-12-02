@@ -1,4 +1,4 @@
-package day1
+package helpers
 
 import (
 	"errors"
@@ -8,11 +8,10 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"strconv"
-	"strings"
 )
 
-func setupInput() (col1, col2 []int) {
+// Utility function to fetch the input. Common for all questions
+func FetchInput(fileName string) []byte {
 	inputListUrl, err := url.Parse("https://adventofcode.com/2024/day/1/input")
 	if err != nil {
 		log.Fatalln("Error parsing input url")
@@ -46,7 +45,7 @@ func setupInput() (col1, col2 []int) {
 
 	// TODO: Move this check before making the request so that if the file exists,
 	// we do not make any requests
-	file, err := os.OpenFile(FILE_NAME, os.O_RDWR|os.O_CREATE|os.O_EXCL, 0666)
+	file, err := os.OpenFile(fileName, os.O_RDWR|os.O_CREATE|os.O_EXCL, 0666)
 	if err != nil {
 		if !errors.Is(err, os.ErrExist) {
 			log.Fatalln("Error creating input file", err)
@@ -61,32 +60,9 @@ func setupInput() (col1, col2 []int) {
 		// log.Printf("Wrote %d bytes to the intput file\n", bytesWritten)
 	}
 
-	body, err = os.ReadFile(FILE_NAME)
+	body, err = os.ReadFile(fileName)
 	if err != nil {
 		log.Fatalln("Error reading input file")
 	}
-
-	inputString := string(body)
-	lines := strings.Split(inputString, "\n")
-	for _, line := range lines {
-		input := strings.Fields(line)
-		if len(input) == 0 {
-			// Reached end of file
-			break
-		}
-		if len(input) != 2 {
-			log.Fatalln("Invalid input")
-		}
-
-		// Convert the values to int
-		var1, err1 := strconv.Atoi(input[0])
-		var2, err2 := strconv.Atoi(input[1])
-		if err1 != nil || err2 != nil {
-			log.Fatalln("Error parsing the value")
-		}
-
-		col1 = append(col1, var1)
-		col2 = append(col2, var2)
-	}
-	return
+	return body
 }

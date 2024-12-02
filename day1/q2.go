@@ -2,9 +2,7 @@ package day1
 
 import "fmt"
 
-func q2() {
-	col1, col2 := setupInput()
-
+func q2(col1, col2 []int) {
 	// Create frequency maps for each of the columns
 	map1 := make(map[int]int)
 	map2 := make(map[int]int)
