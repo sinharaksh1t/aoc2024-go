@@ -6,7 +6,7 @@ const (
 
 func Solve() {
 	// Fetch input for this problem
-	fetchInput()
+	setupInput()
 
 	// Solve Problem 1
 	q1()
