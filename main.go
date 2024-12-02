@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	day1.Q1()
+	day1.Solve()
 }
 
 func init() {

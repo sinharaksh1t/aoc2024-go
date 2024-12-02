@@ -2,47 +2,18 @@ package day1
 
 import (
 	"fmt"
-	"io"
 	"log"
 	"math"
-	"net/http"
-	"net/url"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
 
-func Q1() {
-	inputListUrl, err := url.Parse("https://adventofcode.com/2024/day/1/input")
+func q1() {
+	body, err := os.ReadFile(FILE_NAME)
 	if err != nil {
-		log.Fatalln("Error parsing input url")
-	}
-
-	// Get the session cookie from the env. Probably goingt to break when the
-	// cookie expires in the future but was fun to try nonetheless
-	session, ok := os.LookupEnv("session")
-	if !ok {
-		log.Fatalln("No env variable \"session\" found")
-	}
-
-	headers := http.Header{}
-	headers.Add("Cookie", fmt.Sprintf("session=%s", session))
-	req := http.Request{
-		Method: "GET",
-		URL:    inputListUrl,
-		Header: headers,
-	}
-
-	resp, err := http.DefaultClient.Do(&req)
-	if err != nil {
-		log.Fatalln("Unable to fetch the input list")
-	}
-	defer resp.Body.Close()
-
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatalln("Unable to read the response body")
+		log.Fatalln("Error reading input file")
 	}
 
 	var col1, col2 []int
@@ -81,5 +52,5 @@ func Q1() {
 
 		result += int(math.Abs(float64(val1 - val2)))
 	}
-	fmt.Printf("Result is: %d", result)
+	fmt.Printf("Result for Day-1 Q1: %d\n", result)
 }
