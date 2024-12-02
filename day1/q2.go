@@ -1,8 +1,6 @@
 package day1
 
-import "fmt"
-
-func q2(col1, col2 []int) {
+func q2(col1, col2 []int) int {
 	// Create frequency maps for each of the columns
 	map1 := make(map[int]int)
 	map2 := make(map[int]int)
@@ -17,5 +15,5 @@ func q2(col1, col2 []int) {
 		similarityScore += (num * map2[num] * freq)
 	}
 
-	fmt.Printf("Result for Day-1 Q2: %d\n", similarityScore)
+	return similarityScore
 }

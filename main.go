@@ -2,13 +2,17 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/joho/godotenv"
 	"github.com/sinharaksh1t/aoc2024-go/day1"
+	"github.com/sinharaksh1t/aoc2024-go/day2"
 	"github.com/sinharaksh1t/aoc2024-go/rootpath"
 )
 
 func main() {
+	// TODO: Take input on which question to solve
 	day1.Solve()
+	day2.Solve()
 }
 
 func init() {

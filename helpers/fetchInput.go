@@ -11,8 +11,8 @@ import (
 )
 
 // Utility function to fetch the input. Common for all questions
-func FetchInput(fileName string) []byte {
-	inputListUrl, err := url.Parse("https://adventofcode.com/2024/day/1/input")
+func FetchInput(day int, fileName string) []byte {
+	inputListUrl, err := url.Parse(fmt.Sprintf("https://adventofcode.com/2024/day/%d/input", day))
 	if err != nil {
 		log.Fatalln("Error parsing input url")
 	}

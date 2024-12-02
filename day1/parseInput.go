@@ -10,7 +10,7 @@ import (
 
 // Parse the input based on the requirement of the question
 func parseInput() (col1, col2 []int) {
-	body := helpers.FetchInput(FILE_NAME)
+	body := helpers.FetchInput(1, FILE_NAME)
 
 	inputString := string(body)
 	lines := strings.Split(inputString, "\n")
