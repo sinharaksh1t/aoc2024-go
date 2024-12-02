@@ -6,9 +6,7 @@ import (
 	"sort"
 )
 
-func q1() {
-	col1, col2 := setupInput()
-
+func q1(col1, col2 []int) {
 	// Sort the two columns
 	// I know O(n log(n)), eww
 	sort.Ints(col1)
