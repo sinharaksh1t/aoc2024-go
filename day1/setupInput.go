@@ -44,6 +44,8 @@ func setupInput() (col1, col2 []int) {
 		log.Fatalln("Unable to read the response body")
 	}
 
+	// TODO: Move this check before making the request so that if the file exists,
+	// we do not make any requests
 	file, err := os.OpenFile(FILE_NAME, os.O_RDWR|os.O_CREATE|os.O_EXCL, 0666)
 	if err != nil {
 		if !errors.Is(err, os.ErrExist) {
