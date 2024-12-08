@@ -8,7 +8,7 @@ Day 1: [⭐](https://github.com/sinharaksh1t/aoc2024-go/blob/master/day1/q1.go) 
 
 Day 2: [⭐](https://github.com/sinharaksh1t/aoc2024-go/blob/master/day2/q1.go) [⭐](https://github.com/sinharaksh1t/aoc2024-go/blob/master/day2/q2.go)
 
-Day 3: ☆ ☆
+Day 3: [⭐](https://github.com/sinharaksh1t/aoc2024-go/blob/master/day3/q1.go) ☆
 
 Day 4: ☆ ☆
 
