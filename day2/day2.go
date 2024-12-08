@@ -15,5 +15,6 @@ func Solve() {
 	fmt.Printf("Result for Day-2 Q1: %d\n", ansq1)
 
 	// Solve Problem 2
-	q2()
+	ansq2 := q2(report)
+	fmt.Printf("Result for Day-2 Q2: %d\n", ansq2)
 }
